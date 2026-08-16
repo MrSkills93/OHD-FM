@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Not found — OHD Field Manuals</title>
+<meta name="theme-color" content="#262c1b" />
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: #211e18;
+    color: #efe8db;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  h1 {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  p { color: #a89f8a; font-size: 13px; margin: 0 0 22px; }
+  a {
+    display: inline-block;
+    color: #efe8db;
+    border: 1px solid #3a3527;
+    padding: 11px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  a:hover, a:focus-visible { border-color: #6a7a4d; background: rgba(106,122,77,0.16); }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Section not found</h1>
+    <p>That manual or page doesn't exist.</p>
+    <a id="home" href="/">All field manuals</a>
+  </div>
+
+<script>
+  /* This page is served for any missing URL, at any depth, so a fixed
+     relative link would break. Work out the site root instead: on a
+     github.io project site it's /<repo>/, everywhere else it's /. */
+  (function () {
+    var base = "/";
+    if (location.hostname.endsWith("github.io")) {
+      var first = location.pathname.split("/")[1];
+      if (first) base = "/" + first + "/";
+    }
+    document.getElementById("home").setAttribute("href", base);
+  })();
+</script>
+</body>
+</html>

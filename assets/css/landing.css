@@ -1,0 +1,340 @@
+/* ==========================================================================
+   OHD Field Manuals — landing page
+   The roster is set as a real field-manual contents page: numbered entries,
+   dot leaders, status column. That's the one loud element; everything else
+   stays quiet.
+   ========================================================================== */
+
+body.landing {
+  background: var(--tray);
+  color: var(--ink);
+  padding: 0 16px 64px;
+}
+
+.sheet {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--khaki);
+  box-shadow: var(--paper-shadow);
+  border-radius: var(--radius);
+  padding: 40px 28px 32px;
+}
+
+@media (min-width: 700px) {
+  .sheet { padding: 56px 56px 44px; }
+}
+
+/* ---------------------------------------------------------------- */
+/* Masthead                                                          */
+/* ---------------------------------------------------------------- */
+
+.masthead {
+  text-align: center;
+}
+
+.masthead-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 7vw, 46px);
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.masthead-sub {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(10px, 2.4vw, 13px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 8px 0 0;
+  color: var(--ink);
+}
+
+.rule-double {
+  border: none;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  height: 3px;
+  margin: 18px 0 0;
+}
+
+.masthead-blurb {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 22px auto 0;
+  max-width: 56ch;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------- */
+/* Featured manual                                                   */
+/* ---------------------------------------------------------------- */
+
+.featured {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 34px;
+  padding: 22px;
+  background: var(--khaki-deep);
+  border: 1px solid var(--khaki-line);
+  border-radius: var(--radius);
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 620px) {
+  .featured {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.featured-cover {
+  flex: 0 0 auto;
+  width: 132px;
+  border: 1px solid var(--khaki-line);
+  box-shadow: 0 6px 16px -6px rgba(23, 20, 15, 0.4);
+}
+
+.featured-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 0 0 6px;
+}
+
+.featured-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(19px, 4.4vw, 25px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.featured-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--olive-dark);
+  color: var(--khaki);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--olive-dark);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--olive);
+  border-color: var(--olive);
+}
+
+/* ---------------------------------------------------------------- */
+/* Series roster — the contents-page device                          */
+/* ---------------------------------------------------------------- */
+
+.series {
+  margin-top: 42px;
+}
+
+.series-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 8px;
+}
+
+.series-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.series-build {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.roster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roster-item + .roster-item {
+  border-top: 1px solid var(--khaki-line);
+}
+
+.roster-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 15px 6px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.roster-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--olive);
+  min-width: 4.6em;
+  letter-spacing: 0.04em;
+}
+
+.roster-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.roster-leader {
+  flex: 1;
+  min-width: 10px;
+  border-bottom: 2px dotted var(--khaki-line);
+  transform: translateY(-4px);
+}
+
+.roster-status {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+
+/* Available entries are links and read as active doctrine */
+a.roster-row .roster-status {
+  color: var(--olive);
+  font-weight: 500;
+}
+
+a.roster-row:hover,
+a.roster-row:focus-visible {
+  background: rgba(63, 74, 50, 0.09);
+}
+
+a.roster-row:hover .roster-leader,
+a.roster-row:focus-visible .roster-leader {
+  border-bottom-color: var(--olive);
+}
+
+/* Pending entries stay legible but visibly inert */
+.roster-row.pending {
+  color: var(--ink-soft);
+  cursor: default;
+}
+
+.roster-row.pending .roster-code,
+.roster-row.pending .roster-title {
+  opacity: 0.62;
+}
+
+/* On narrow screens the longer titles ("Transport Helicopter Operating")
+   would squeeze the dot leader to nothing, so drop the leader and let the
+   row wrap into two tidy lines instead. */
+@media (max-width: 560px) {
+  .roster-row {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 13px 6px;
+  }
+
+  .roster-leader { display: none; }
+
+  .roster-code {
+    min-width: 0;
+    order: 1;
+  }
+
+  .roster-status {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .roster-title {
+    order: 3;
+    flex-basis: 100%;
+    font-size: 14.5px;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Footer                                                            */
+/* ---------------------------------------------------------------- */
+
+.sheet-foot {
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 3px solid var(--ink);
+}
+
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.foot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--khaki-line);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+}
+
+.foot-link:hover,
+.foot-link:focus-visible {
+  border-color: var(--olive);
+  background: rgba(63, 74, 50, 0.09);
+}
+
+.foot-note {
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.foot-note + .foot-note {
+  margin-top: 8px;
+}

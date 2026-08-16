@@ -1,0 +1,68 @@
+/* ==========================================================================
+   OHD Field Manuals — shared tokens
+   Palette sampled directly from the FM 1-1 cover so the site and the
+   documents read as one object. Everything visual starts here.
+   ========================================================================== */
+
+:root {
+  /* Paper */
+  --khaki: #e2d6c6;
+  --khaki-deep: #d8cbb6;
+  --khaki-line: #cbbfa8;
+  --ink: #17140f;
+  --ink-soft: #4a443a;
+
+  /* Olive (from the 22nd RR shield) */
+  --olive: #3f4a32;
+  --olive-dark: #262c1b;
+  --olive-light: #6a7a4d;
+
+  /* Dark tray */
+  --tray: #211e18;
+  --tray-2: #2a261e;
+  --tray-line: #3a3527;
+  --paper-text: #efe8db;
+  --paper-text-dim: #a89f8a;
+
+  --paper-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.55);
+  --radius: 3px;
+
+  --font-display: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--olive-light);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
