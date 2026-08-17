@@ -98,7 +98,56 @@ body.landing {
   width: 132px;
   border: 1px solid var(--khaki-line);
   box-shadow: 0 6px 16px -6px rgba(23, 20, 15, 0.4);
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
 }
+
+.featured-cover img {
+  width: 100%;
+  height: auto;
+}
+
+/* Pre-rendered pages, stacked over the cover and cross-faded on hover */
+.preview-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+
+.preview-frame.is-visible { opacity: 1; }
+
+/* Progress segments, like a video thumbnail scrub bar */
+.preview-ticks {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+
+.featured-cover:hover .preview-ticks,
+.featured-cover:focus-within .preview-ticks { opacity: 1; }
+
+.preview-tick {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(23, 20, 15, 0.35);
+}
+
+.preview-tick.is-active { background: var(--olive-light); }
+
+.featured-cover.has-preview { cursor: pointer; }
 
 .featured-eyebrow {
   font-family: var(--font-mono);
